@@ -14,11 +14,14 @@ app.use("/", function(req,res){
   });
 //define the port the server will use to listen for requests.
 const port = 3000;
-
 //create a simple route handler for the HTTP GET / request that replies with a string.
-app.get("/", (req, res) => {
+app.get('/', (req, res) => {
     res.status(200).send("CSV Report Generator");
 });
+//create a simple route handler for the HTTP POST
+app.post('/upload_json', function (req, res) {
+    res.send('POST request to the homepage')
+  })
 //start a server listening for incoming requests on port 
 //and display a message to confirm it's listening.
 app.listen(port, () => {
